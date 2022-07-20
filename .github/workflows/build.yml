@@ -1,0 +1,48 @@
+name: build
+
+on: [push]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04]
+        luaVersion: ["5.1", "5.2", "5.3", "5.4", "luajit"]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@master
+
+    - uses: leafo/gh-actions-lua@master
+      with:
+        luaVersion: ${{ matrix.luaVersion }}
+
+    - uses: leafo/gh-actions-luarocks@master
+
+    - name: setup-linux
+      if: matrix.os == 'ubuntu-22.04'
+      run: |
+        sudo apt-get install librtmidi-dev jackd libjack0 libjack-dev
+
+    - name: setup 
+      run: |
+        luarocks install inspect
+
+    - name: build
+      run: |
+        set -e
+        lua -v
+        luarocks make rockspecs/lrtmidi-scm-0.rockspec
+        lua -e 'print(require"lrtmidi"); print(require"lrtmidi"._VERSION)'
+
+    - name: test
+      run: |
+        set -e
+        lua -v
+        jackd -r -ddummy -r44100 -p1024 &
+        sleep 2
+        echo "=============================================="
+        lua examples/example01.lua
+     
