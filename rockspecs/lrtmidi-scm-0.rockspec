@@ -5,7 +5,7 @@ source = {
   dir = "lua-lrtmidi-master",
 }
 description = {
-  summary = "Lua binding for the RtMidi",
+  summary = "Lua binding for RtMidi",
   homepage = "https://github.com/osch/lua-lrtmidi",
   license = "MIT",
   detailed = [[
