@@ -145,7 +145,7 @@ from a MIDI Output port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiin_openPort">**`     midiin:openPort(portNumber)
+* <a id="midiin_openPort">**`     midiin:openPort(portNumber[, portName])
   `** </a>
 
   A *MidiIn* object can handle one MIDI input connection for receiving MIDI events. This methods
@@ -153,6 +153,8 @@ from a MIDI Output port.
 
   * *portNumber* - integer value, it must be
                    1 <= *portNumber* <= [midiin:getPortCount()](#midiin_getPortCount).
+  * *portName*   - optional string value, port name of the MIDI IN port of this *MidiIn*
+                   object visible for other applications.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
@@ -325,7 +327,7 @@ to a MIDI Input port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiout_openPort">**`     midiout:openPort(portNumber)
+* <a id="midiout_openPort">**`     midiout:openPort(portNumber[, portName])
   `** </a>
 
   A *MidiOut* object can handle one MIDI output connection for sending MIDI events. This methods
@@ -333,6 +335,8 @@ to a MIDI Input port.
 
   * *portNumber* - integer value, it must be
                    1 <= *portNumber* <= [midiout:getPortCount()](#midiout_getPortCount).
+  * *portName*   - optional string value, port name of the MIDI OUT port of this *MidiOut*
+                   object visible for other applications.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
