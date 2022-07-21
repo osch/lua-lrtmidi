@@ -117,7 +117,7 @@ while true do
                 print(toString(deltaSeconds, channel + 1, v1, v2))
             end
         end
-    until not dt
+    until not deltaSeconds
     if c then
         c = string.char(c)
         if c == "Q" or c == "q" then
