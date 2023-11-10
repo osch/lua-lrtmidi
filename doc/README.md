@@ -58,8 +58,8 @@ local lrtmidi = require("lrtmidi")
 ##   Module Functions
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="lrtmidi_getCompiledApi">**`  lrtmidi.getCompiledApi()
-  `**</a>
+* <span id="lrtmidi_getCompiledApi">**`lrtmidi.getCompiledApi()
+  `**</span>
   
   Returns a string list of possible audio API names that can be used
   for creating a new controller object with [lrtmidi.new()](#lrtmidi_new). 
@@ -69,8 +69,8 @@ local lrtmidi = require("lrtmidi")
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="lrtmidi_newMidiIn">**`  lrtmidi.newMidiIn([apiName][, clientName])
-  `**</a>
+* <span id="lrtmidi_newMidiIn">**`lrtmidi.newMidiIn([apiName][, clientName])
+  `**</span>
   
   Creates a new *MidiIn* object for receiving MIDI events from a MIDI OUT port.
   
@@ -86,8 +86,8 @@ local lrtmidi = require("lrtmidi")
   
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="lrtmidi_newMidiOut">**`  lrtmidi.newMidiOut([apiName][, clientName])
-  `**</a>
+* <span id="lrtmidi_newMidiOut">**`lrtmidi.newMidiOut([apiName][, clientName])
+  `**</span>
   
   Creates a new *MidiOut* object for sending MIDI events to a MIDI IN port.
   
@@ -111,24 +111,24 @@ from a MIDI Output port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiin_getCurrentApi">**`      midiin:getCurrentApi()
-  `** </a>
+* <span id="midiin_getCurrentApi">**`midiin:getCurrentApi()
+  `** </span>
 
   Returns the MIDI API name used with this *MidiIn* object. For possible values 
   see [lrtmidi.getCompiledApi()](#lrtmidi_getCompiledApi).
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiin_getPortCount">**`     midiin:getPortCount()
-  `** </a>
+* <span id="midiin_getPortCount">**`midiin:getPortCount()
+  `** </span>
 
   Returns the number of available MIDI Output ports that can be used for MIDI input by connecting
   this *MidiIn* object using the method [midiin:openPort()](#midiin_openPort).
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiin_getPortName">**`     midiin:getPortName(portNumber)
-  `** </a>
+* <span id="midiin_getPortName">**`midiin:getPortName(portNumber)
+  `** </span>
 
   Returns as string value the name of the specified MIDI port.
   
@@ -137,16 +137,16 @@ from a MIDI Output port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiin_getPortNames">**`    midiin:getPortNames()
-  `** </a>
+* <span id="midiin_getPortNames">**`midiin:getPortNames()
+  `** </span>
 
   Returns a list of all port names. The list contains for each port the port name
   as string value at the list position of the corresponding port number.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiin_openPort">**`     midiin:openPort(portNumber[, portName])
-  `** </a>
+* <span id="midiin_openPort">**`midiin:openPort(portNumber[, portName])
+  `** </span>
 
   A *MidiIn* object can handle one MIDI input connection for receiving MIDI events. This methods
   connects the *MidiIn* object to the MIDI OUT port specified by the given *portNumber*.
@@ -158,8 +158,8 @@ from a MIDI Output port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiin_openVirtualPort">**`     midiin:openVirtualPort([portName])
-  `** </a>
+* <span id="midiin_openVirtualPort">**`midiin:openVirtualPort([portName])
+  `** </span>
 
   A *MidiIn* object can handle one MIDI input connection for receiving MIDI events. This methods
   creates a virtual input port to allow software connections to this *MidiIn* 
@@ -174,8 +174,8 @@ from a MIDI Output port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiin_ignoreTypes">**`     midiin:ignoreTypes(types)
-  `** </a>
+* <span id="midiin_ignoreTypes">**`midiin:ignoreTypes(types)
+  `** </span>
 
   Specify whether certain MIDI message types should be queued or ignored during input.
 
@@ -190,8 +190,8 @@ from a MIDI Output port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiin_setReceiver">**`     midiin:setReceiver(receiver)
-  `** </a>
+* <span id="midiin_setReceiver">**`midiin:setReceiver(receiver)
+  `** </span>
   
   Sets a receiver object for receiving asynchronously MIDI event data.
   
@@ -209,8 +209,8 @@ from a MIDI Output port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiin_cancelReceiver">**`     midiin:cancelReceiver()
-  `** </a>
+* <span id="midiin_cancelReceiver">**`midiin:cancelReceiver()
+  `** </span>
   
   Disables the receiver that was set with the method [midiin:setReceiver()](#midiin_setReceiver).
   The receiver object will no longer receive MIDI events.
@@ -220,8 +220,8 @@ from a MIDI Output port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiin_getMessage">**`         midiin:getMessage([buffer])
-  `** </a>
+* <span id="midiin_getMessage">**`midiin:getMessage([buffer])
+  `** </span>
 
   Obtains next MIDI message if available. Returns immediately whether a new message
   is available or not.
@@ -244,8 +244,8 @@ from a MIDI Output port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiin_closePort">**`     midiin:closePort()
-  `** </a>
+* <span id="midiin_closePort">**`midiin:closePort()
+  `** </span>
   
   Disconnects the *MidIn* object from the MIDI port. Afterwards the *MidiIn* object can be used 
   to connect to another port using [midiin:openPort()](#midiin_openPort) or 
@@ -253,8 +253,8 @@ from a MIDI Output port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiin_close">**`        midiin:close()
-  `** </a>
+* <span id="midiin_close">**`midiin:close()
+  `** </span>
   
   Closes the *MidIn* object and releases underlying resources. Afterwards the *MidiIn* 
   object becomes invalid and cannot be used again. 
@@ -264,8 +264,8 @@ from a MIDI Output port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiin_setErrorReceiver">**`     midiin:setErrorReceiver(receiver)
-  `** </a>
+* <span id="midiin_setErrorReceiver">**`midiin:setErrorReceiver(receiver)
+  `** </span>
 
   * *receiver* - receiver object for error/debug information, must implement the [Receiver C API], 
                  e.g. a [mtmsg] buffer.
@@ -292,8 +292,8 @@ to a MIDI Input port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiout_getCurrentApi">**`      midiout:getCurrentApi()
-  `** </a>
+* <span id="midiout_getCurrentApi">**`midiout:getCurrentApi()
+  `** </span>
 
   Returns the MIDI API name used with this *MidiOut* object. For possible values 
   see [lrtmidi.getCompiledApi()](#lrtmidi_getCompiledApi).
@@ -301,16 +301,16 @@ to a MIDI Input port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiout_getPortCount">**`     midiout:getPortCount()
-  `** </a>
+* <span id="midiout_getPortCount">**`midiout:getPortCount()
+  `** </span>
 
   Returns the number of available MIDI Input ports that can be used for MIDI output by connecting
   this *MidiOut* object using the method [midiout:openPort()](#midiout_openPort).
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiout_getPortName">**`     midiout:getPortName(portNumber)
-  `** </a>
+* <span id="midiout_getPortName">**`midiout:getPortName(portNumber)
+  `** </span>
 
   Returns as string value the name of the specified MIDI port.
   
@@ -319,16 +319,16 @@ to a MIDI Input port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiout_getPortNames">**`    midiout:getPortNames()
-  `** </a>
+* <span id="midiout_getPortNames">**`midiout:getPortNames()
+  `** </span>
 
   Returns a list of all port names. The list contains for each port the port name
   as string value at the list position of the corresponding port number.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiout_openPort">**`     midiout:openPort(portNumber[, portName])
-  `** </a>
+* <span id="midiout_openPort">**`midiout:openPort(portNumber[, portName])
+  `** </span>
 
   A *MidiOut* object can handle one MIDI output connection for sending MIDI events. This methods
   connects the *MidiOut* object to the MIDI IN port specified by the given *portNumber*.
@@ -340,8 +340,8 @@ to a MIDI Input port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiout_openVirtualPort">**`     midiout:openVirtualPort([portName])
-  `** </a>
+* <span id="midiout_openVirtualPort">**`midiout:openVirtualPort([portName])
+  `** </span>
 
   A *MidiOut* object can handle one MIDI output connection for sending MIDI events. This methods
   creates a virtual output port to allow software connections to this *MidiOut* 
@@ -356,8 +356,8 @@ to a MIDI Input port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiout_sendMessage">**`         midiout:sendMessage(message)
-  `** </a>
+* <span id="midiout_sendMessage">**`midiout:sendMessage(message)
+  `** </span>
 
   Sends a MIDI message.
   
@@ -368,8 +368,8 @@ to a MIDI Input port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiout_closePort">**`     midiout:closePort()
-  `** </a>
+* <span id="midiout_closePort">**`midiout:closePort()
+  `** </span>
   
   Disconnects the *MidiOut* object from the MIDI port. Afterwards the *MidiOut* object can be used 
   to connect to another port using [midiout:openPort()](#midiout_openPort) or 
@@ -377,8 +377,8 @@ to a MIDI Input port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiout_close">**`        midiout:close()
-  `** </a>
+* <span id="midiout_close">**`midiout:close()
+  `** </span>
   
   Closes the *MidiOut* object and releases underlying resources. Afterwards the *MidiOut* 
   object becomes invalid and cannot be used again. 
@@ -388,8 +388,8 @@ to a MIDI Input port.
 
 <!-- ---------------------------------------------------------------------------------------- -->
 
-* <a id="midiout_setErrorReceiver">**`     midiout:setErrorReceiver(receiver)
-  `** </a>
+* <span id="midiout_setErrorReceiver">**`midiout:setErrorReceiver(receiver)
+  `** </span>
 
   * *receiver* - receiver object for error/debug information, must implement the [Receiver C API], 
                  e.g. a [mtmsg] buffer.
