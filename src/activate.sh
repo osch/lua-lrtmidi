@@ -18,7 +18,7 @@ else
     add_lua_path="$lualrtmidi_dir/src/?.lua;$lualrtmidi_dir/src/?/init.lua"
     add_lua_cpath="$lualrtmidi_dir/src/build"
 
-    # unset LUA_PATH_5_3 LUA_CPATH_5_3 LUA_PATH_5_2 LUA_CPATH_5_2 LUA_PATH LUA_CPATH
+    # unset LUA_PATH_5_4 LUA_CPATH_5_4 LUA_PATH_5_3 LUA_CPATH_5_3 LUA_PATH_5_2 LUA_CPATH_5_2 LUA_PATH LUA_CPATH
 
     default_version=""
     if which lua > /dev/null 2>&1; then

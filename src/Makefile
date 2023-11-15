@@ -5,15 +5,15 @@ BUILD_DATE  := $(shell date "+%Y-%m-%dT%H:%M:%S")
 
 LNX_GCC_RUN := g++ -shared -fPIC -O2 -g  -Werror=return-type
 WIN_GCC_RUN := gcc -shared -fPIC -O2
-MAC_GCC_RUN := MACOSX_DEPLOYMENT_TARGET=10.8 gcc -O2 -bundle -undefined dynamic_lookup -all_load
+MAC_GCC_RUN := g++ -O2 -bundle -undefined dynamic_lookup -all_load
 
 LNX_COPTS   := -I/usr/include/rtaudio
 WIN_COPTS   := -I/mingw64/include/lua5.1 
-MAC_COPTS   := -I/usr/local/opt/lua/include/lua5.3 
+MAC_COPTS   := -std=c++11 -I/usr/local/include/lua
 
 LNX_LOPTS   := -lrtmidi -g
 WIN_LOPTS   := -lkernel32
-MAC_LOPTS   := -lpthread
+MAC_LOPTS   := -lrtmidi
 
 LNX_SO_EXT  := so
 WIN_SO_EXT  := dll

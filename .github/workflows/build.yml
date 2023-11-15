@@ -7,7 +7,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-22.04]
+        os: [ubuntu-22.04, macos-latest]
         luaVersion: ["5.1", "5.2", "5.3", "5.4", "luajit"]
 
     runs-on: ${{ matrix.os }}
@@ -26,18 +26,36 @@ jobs:
       run: |
         sudo apt-get install librtmidi-dev jackd libjack0 libjack-dev
 
+    - name: setup-macos
+      if: matrix.os == 'macos-latest'
+      run: |
+        sw_vers -productVersion
+        brew install rtmidi
+
     - name: setup 
       run: |
         luarocks install inspect
 
-    - name: build
+    - name: build-linux
+      if: matrix.os == 'ubuntu-22.04'
       run: |
         set -e
         lua -v
         luarocks make rockspecs/lrtmidi-scm-0.rockspec
         lua -e 'print(require"lrtmidi"); print(require"lrtmidi"._VERSION)'
+        lua -e 'print("RtMidi", require"lrtmidi".getRtMidiVersion());'
 
-    - name: test
+    - name: build-macos
+      if: matrix.os == 'macos-latest'
+      run: |
+        set -e
+        lua -v
+        luarocks make CC="gcc" LD="gcc" rockspecs/lrtmidi-scm-0.rockspec
+        lua -e 'print(require"lrtmidi"); print(require"lrtmidi"._VERSION)'
+        lua -e 'print("RtMidi", require"lrtmidi".getRtMidiVersion());'
+
+    - name: test-linux
+      if: matrix.os == 'ubuntu-22.04'
       run: |
         set -e
         lua -v
@@ -46,3 +64,10 @@ jobs:
         echo "=============================================="
         lua examples/example01.lua
      
+    - name: test-macos
+      if: matrix.os == 'macos-latest'
+      run: |
+        set -e
+        lua -v
+        echo "=============================================="
+        lua examples/example01.lua
