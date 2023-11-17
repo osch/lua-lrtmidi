@@ -20,6 +20,8 @@ jobs:
         luaVersion: ${{ matrix.luaVersion }}
 
     - uses: leafo/gh-actions-luarocks@master
+      with:
+        luarocksVersion: "3.9.2"
 
     - name: setup-linux
       if: matrix.os == 'ubuntu-22.04'
@@ -36,21 +38,11 @@ jobs:
       run: |
         luarocks install inspect
 
-    - name: build-linux
-      if: matrix.os == 'ubuntu-22.04'
+    - name: build
       run: |
         set -e
         lua -v
         luarocks make rockspecs/lrtmidi-scm-0.rockspec
-        lua -e 'print(require"lrtmidi"); print(require"lrtmidi"._VERSION)'
-        lua -e 'print("RtMidi", require"lrtmidi".getRtMidiVersion());'
-
-    - name: build-macos
-      if: matrix.os == 'macos-latest'
-      run: |
-        set -e
-        lua -v
-        luarocks make CC="gcc" LD="gcc" rockspecs/lrtmidi-scm-0.rockspec
         lua -e 'print(require"lrtmidi"); print(require"lrtmidi"._VERSION)'
         lua -e 'print("RtMidi", require"lrtmidi".getRtMidiVersion());'
 

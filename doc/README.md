@@ -6,6 +6,7 @@
 
    * [Overview](#overview)
    * [Module Functions](#module-functions)
+        * [lrtmidi.getRtMidiVersion()](#lrtmidi_getRtMidiVersion)
         * [lrtmidi.getCompiledApi()](#lrtmidi_getCompiledApi)
         * [lrtmidi.newMidiIn()](#lrtmidi_newMidiIn)
         * [lrtmidi.newMidiOut()](#lrtmidi_newMidiOut)
@@ -58,6 +59,11 @@ local lrtmidi = require("lrtmidi")
 ##   Module Functions
 <!-- ---------------------------------------------------------------------------------------- -->
 
+* <span id="lrtmidi_getRtMidiVersion">**`  lrtmidi.getRtMidiVersion()
+  `**</span>
+  
+  Returns the RtMidi version as string.
+  
 * <span id="lrtmidi_getCompiledApi">**`lrtmidi.getCompiledApi()
   `**</span>
   
