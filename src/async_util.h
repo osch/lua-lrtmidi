@@ -5,6 +5,12 @@
 
 /* -------------------------------------------------------------------------------------------- */
 
+#if defined(__cplusplus)
+extern "C" {
+#endif
+
+/* -------------------------------------------------------------------------------------------- */
+
 #define async_util_abort lrtmidi_async_util_abort
 bool async_util_abort(int rc, int line); /* function does not return */
 
@@ -337,6 +343,12 @@ static inline void async_mutex_notify(Mutex* mutex)
     if (rc != thrd_success)  { async_util_abort(rc, __LINE__); }
 #endif
 }
+
+/* -------------------------------------------------------------------------------------------- */
+
+#if defined(__cplusplus)
+} /* extern "C" */
+#endif
 
 /* -------------------------------------------------------------------------------------------- */
 

@@ -1,13 +1,12 @@
 #ifndef LRTMIDI_MIDIOUT_HPP
 #define LRTMIDI_MIDIOUT_HPP
 
+#include "util.h"
 #include "midibase.hpp"
 
 /* ============================================================================================ */
 extern "C" {
 /* ============================================================================================ */
-
-#include "util.h"
 
 int lrtmidi_midiout_init_module(lua_State* L, int module);
 

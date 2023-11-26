@@ -1,11 +1,11 @@
 #ifndef LRTMIDI_MAIN_HPP
 #define LRTMIDI_MAIN_HPP
 
+#include "util.h"
+
 /* ============================================================================================ */
 extern "C" {
 /* ============================================================================================ */
-
-#include "util.h"
 
 DLL_PUBLIC int luaopen_lrtmidi(lua_State* L);
 

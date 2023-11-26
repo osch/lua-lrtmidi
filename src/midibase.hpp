@@ -1,11 +1,11 @@
 #ifndef LRTMIDI_MIDIBASE_HPP
 #define LRTMIDI_MIDIBASE_HPP
 
+#include "util.h"
+
 /* ============================================================================================ */
 extern "C" {
 /* ============================================================================================ */
-
-#include "util.h"
 
 struct receiver_capi;
 struct receiver_object;

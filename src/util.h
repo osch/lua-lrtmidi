@@ -24,9 +24,15 @@
     #include <sys/time.h>
 #endif
 
+#if defined(__cplusplus)
+extern "C" {
+#endif
 #include <lua.h>
 #include <lualib.h>
 #include <lauxlib.h>
+#if defined(__cplusplus)
+} /* extern "C" */
+#endif
 
 
 /* -------------------------------------------------------------------------------------------- */
@@ -85,7 +91,14 @@
 #define COMPAT53_PREFIX lrtmidi_compat
 
 #include "async_util.h"
-#include "compat-5.3.h"
+
+#if defined(__cplusplus)
+extern "C" {
+#endif
+    #include "compat-5.3.h"
+#if defined(__cplusplus)
+} /* extern "C" */
+#endif
 
 
 lua_Number lrtmidi_current_time_seconds();

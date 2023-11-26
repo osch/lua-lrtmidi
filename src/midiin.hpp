@@ -1,13 +1,12 @@
 #ifndef LRTMIDI_MIDIIN_HPP
 #define LRTMIDI_MIDIIN_HPP
 
+#include "util.h"
 #include "midibase.hpp"
 
 /* ============================================================================================ */
 extern "C" {
 /* ============================================================================================ */
-
-#include "util.h"
 
 int lrtmidi_midiin_init_module(lua_State* L, int module);
 
